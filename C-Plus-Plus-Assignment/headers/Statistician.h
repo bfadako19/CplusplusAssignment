@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iomanip> 
-#include <math.h> 
 #include "Computation.h"
 
 using namespace std;
@@ -71,9 +70,9 @@ Statistician :: Statistician()
 Statistician :: Statistician(double num)
 {
     this->num = num;
-    this->num = highest;
-    this->num = lowest;
-    this->num = sum;
+    highest = num;
+    lowest = num;
+    sum = num;
 }
 void Statistician :: getStatistician(double& highest,double& lowest,double& sum) const
 {
@@ -81,44 +80,39 @@ void Statistician :: getStatistician(double& highest,double& lowest,double& sum)
     lowest =this->lowest;
     sum = this->sum ;
 }
-void Statistician :: addNumber(double) 
+void Statistician :: addNumber(double num) 
 {
     this->num = num;
-    this->Computation::computeLowest();
-    this->Computation::computeHighest();
-    this->Computation::computeSum();
+    computeLowest();
+    computeHighest();
+    computeSum();
     
 }
 void Statistician :: computeLowest()
 {
-     if (lowest > num) {    
-        while (num > lowest) {
-            if (num > lowest) {
-                lowest = num;
+    
+    if (num < lowest) {
+        lowest = num;
                         
-            }
         }
-}
-}
+
+}       
 void Statistician :: computeHighest()
 {    
-    if (num > highest) {    
-        while (num > highest) {
-            if (num > highest) {
-                highest = num;
+    if (num > highest) {
+        highest = num;
                         
-            }
         }
-}
+
 }
 void Statistician :: computeSum()
 {
-    num += sum;
+    sum += num;
 }
 void Statistician :: printStatistician() const
 {   
     cout << fixed << showpoint;
-    cout << setprecision(3);
+    cout << setprecision(2);
     cout << "lowest= " << lowest <<", highest=" << highest <<", sum="<< sum << endl;
 
 }

@@ -14,6 +14,7 @@ int main() {
     double sum;
 
     // call method on s1 that will display it to stdout
+    cout << "Statistician1: ";
     s1.printStatistician();
 
     // call method on s1 that will add 5.2 to it
@@ -33,13 +34,17 @@ int main() {
     s1.getStatistician(highest,lowest,sum);
 
     // display values in local variables to stdout
-    cout << "Highest= " << highest << ", Lowest= " << ", Sum=" << sum << endl;
+    cout << "Statistician 1 Lowest : " << lowest << endl;
+    cout << "Statistician 1 Highest : " << highest << endl;
+    cout << "Statistician 1 Sum : " << sum << endl;
+    
 
     // create a Statistician object named s2 using its no-arg
     // constructor
     Statistician s2;
 
     // call method on s2 that will display it to stdout
+    cout << "Statistician2: ";
     s2.printStatistician();
 
     // call method on s1 that will test if it is equal to s2
